@@ -1,26 +1,14 @@
 [
 {
   "model": "Teams.teams",
-  "pk": 6,
-  "fields": {
-    "name": "FC Barcelona",
-    "wins": 0,
-    "losses": 0,
-    "tie": 1,
-    "score": 1,
-    "played_Count": 0
-  }
-},
-{
-  "model": "Teams.teams",
   "pk": 4,
   "fields": {
     "name": "Real Madrid C.F",
     "wins": 3,
     "losses": 1,
-    "tie": 1,
-    "score": 10,
-    "played_Count": 2
+    "tie": 2,
+    "score": 11,
+    "played_Count": 3
   }
 },
 {
@@ -30,9 +18,21 @@
     "name": "Juventus F.C.",
     "wins": 1,
     "losses": 3,
-    "tie": 0,
-    "score": 3,
-    "played_Count": 2
+    "tie": 1,
+    "score": 4,
+    "played_Count": 3
+  }
+},
+{
+  "model": "Teams.teams",
+  "pk": 6,
+  "fields": {
+    "name": "FC Barcelona",
+    "wins": 0,
+    "losses": 0,
+    "tie": 1,
+    "score": 1,
+    "played_Count": 0
   }
 }
 ]
