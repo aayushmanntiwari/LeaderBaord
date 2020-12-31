@@ -33,10 +33,10 @@
     <div class="container" style="margin: 15px auto;">
       <form id="myform" action="sending" method="GET" onsubmit="">
         {% csrf_token %}
-        <p><b>Selected rows data</b></p>
+        <!--<p><b>Selected rows data</b></p>
         <pre id="view-rows"></pre>
         <p><b>Form data as submitted to the server</b></p>
-        <pre id="view-form"></pre>
+        <pre id="view-form"></pre>-->
         <p><button class="btn btn-danger" type="submit">View selected</button><br/></p>
         <table id="mytable" class="table table-bordered table-striped table-hover">
           <thead>
@@ -51,17 +51,6 @@
             </tr>
           </thead>
             <tbody></tbody>
-          <tfoot>
-            <tr>
-              <th></th>
-              <th>Team Name</th>
-              <th>P</th>
-              <th>Wins</th>
-              <th>Losses</th>
-              <th>Ties</th>
-              <th>Score</th>
-            </tr>
-          </tfoot>
         </table>
       </form>
     </div>
