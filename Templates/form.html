@@ -1,0 +1,51 @@
+{% block content%}
+<form action="" method="POST"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Choose option</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="window.location='/'">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">{{team1}}</label>
+                <select name="option1" id="exampleFormControlInput1">
+                    <option value="wins">wins</option>
+                    <option value="Loss">Loss</option>
+                    <option value="ties">ties</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput2">{{team2}}</label>
+                <!--<select name="option2" id="exampleFormControlInput1">
+                        <option value="wins">wins</option>
+                        <option value="Loss">Loss</option>
+                        <option value="ties">ties</option>
+                    </select>
+                -->
+                <select name="option2" id="exampleFormControlInput2"disabled>
+                    <optgroup data-group='wins'>
+                        <option data-group='wins' value='Loss'>Loss</option>
+                    </optgroup>
+                    <optgroup data-group='Loss'>
+                        <option data-group='Loss' value='wins'>wins</option>
+                    </optgroup>
+                    <optgroup data-group='ties'>
+                        <option data-group='ties' value='ties'>ties</option>
+                    </optgroup>
+                </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="window.location='/'">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</form>
+{% endblock %}

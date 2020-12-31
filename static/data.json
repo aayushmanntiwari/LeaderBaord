@@ -1,0 +1,38 @@
+[
+{
+  "model": "Teams.teams",
+  "pk": 6,
+  "fields": {
+    "name": "FC Barcelona",
+    "wins": 0,
+    "losses": 0,
+    "tie": 1,
+    "score": 1,
+    "played_Count": 0
+  }
+},
+{
+  "model": "Teams.teams",
+  "pk": 4,
+  "fields": {
+    "name": "Real Madrid C.F",
+    "wins": 3,
+    "losses": 1,
+    "tie": 1,
+    "score": 10,
+    "played_Count": 2
+  }
+},
+{
+  "model": "Teams.teams",
+  "pk": 5,
+  "fields": {
+    "name": "Juventus F.C.",
+    "wins": 1,
+    "losses": 3,
+    "tie": 0,
+    "score": 3,
+    "played_Count": 2
+  }
+}
+]

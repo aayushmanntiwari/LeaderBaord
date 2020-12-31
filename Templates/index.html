@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LeaderBoard</title>
+        <link rel="icon" href="" type="image/png" sizes="16x16">
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap4/css/bootstrap.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/dataTables.checkboxes.css'%}">
+
+        <!--Custom css file goes here-->
+
+        <style>
+      
+                  *{
+                      padding: 0;
+                      margin: 0;
+                  }
+        </style>
+
+
+	</head>
+	<body>
+    {% if showmodel %}
+      {% block content%}
+        {% include 'form.html' %}
+      {% endblock %}
+    {% endif %}
+    <div class="container" style="margin: 15px auto;">
+      <form id="myform" action="sending" method="GET" onsubmit="">
+        {% csrf_token %}
+        <p><b>Selected rows data</b></p>
+        <pre id="view-rows"></pre>
+        <p><b>Form data as submitted to the server</b></p>
+        <pre id="view-form"></pre>
+        <p><button class="btn btn-danger" type="submit">View selected</button><br/></p>
+        <table id="mytable" class="table table-bordered table-striped table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Team Name</th>
+              <th>P</th>
+              <th>Wins</th>
+              <th>Losses</th>
+              <th>Ties</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+            <tbody></tbody>
+          <tfoot>
+            <tr>
+              <th></th>
+              <th>Team Name</th>
+              <th>P</th>
+              <th>Wins</th>
+              <th>Losses</th>
+              <th>Ties</th>
+              <th>Score</th>
+            </tr>
+          </tfoot>
+        </table>
+      </form>
+    </div>
+    <script src="{% static 'plugins/jquery-3.4.1.min.js'%} "></script>
+    <script src="{% static 'bootstrap4/js/bootstrap.min.js'%} "></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="{% static 'js/dataTables.checkboxes.min.js'%} "></script>
+    <script src="{% static 'js/custom.js'%} "></script>
+    <script src="{% static 'js/customdropdown.js'%} "></script>
+    <script src="{% static 'js/url.js'%} "></script>
+    {% if showmodel %}
+      <script>
+        $(document).ready(function(){
+          $("#myModal").modal('show');
+        });
+      </script>
+    {% endif %}
+	</body>
+</html>   
