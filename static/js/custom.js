@@ -26,7 +26,7 @@ $(document).ready(function(){
         }
       ],
       select:{
-        style:'api'
+        style:'multi'
       },
     });
     $('#myform').on('submit',function(e){
