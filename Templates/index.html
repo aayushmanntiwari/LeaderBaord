@@ -63,16 +63,12 @@
     <script src="{% static 'js/customdropdown.js'%} "></script>
     <script src="{% static 'js/url.js'%} "></script>
     <script>
-	    $(document).ready(function () {
-		   $("input[type=checkbox]").change(function () {
-		      var maxAllowed = 3;
-		      var cnt = $("input[type=checkbox]:checked").length;
-		      if (cnt > maxAllowed) 
-		      {
-			 $(this).prop("checked", "");
-			 alert('Select maximum ' + maxAllowed + ' Levels!');
-		     }
-		  });
+	    $('.dt-checkboxes').click(function(){
+		  if ($('.dt-checkboxes:checked').length >= 3) {
+		    $(".dt-checkboxes").not(":checked").attr("disabled",true);
+		  }
+		  else 
+		    $(".dt-checkboxes").not(":checked").removeAttr('disabled');
 		});
     </script>
     {% if showmodel %}
