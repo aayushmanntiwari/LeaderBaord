@@ -40,6 +40,13 @@ $(document).ready(function(){
       $("#view-rows").text(rowsel.join(","))
       $("#view-form").text($(form).serialize())
       $('input[name="pk\[\]"]',form).remove()
+      $('.dt-checkboxes').click(function(){
+			  if ($('.dt-checkboxes:checked').length >= 3) {
+			    $(".dt-checkboxes").not(":checked").attr("disabled",true);
+			  }
+			  else 
+			    $(".dt-checkboxes").not(":checked").removeAttr('disabled');
+	  });
       /*e.preventDefault()*/
     });
 });
