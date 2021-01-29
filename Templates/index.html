@@ -62,7 +62,14 @@
     <script src="{% static 'js/custom.js'%} "></script>
     <script src="{% static 'js/customdropdown.js'%} "></script>
     <script src="{% static 'js/url.js'%} "></script>
-    <script src="{% static 'js/limit.js'%} "></script>
+    <script>
+	    $('input[type=checkbox]').on('change', function (e) {
+		    if ($('input[type=checkbox]:checked').length > 2) {
+			$(this).prop('checked', false);
+			alert("allowed only 2");
+		    }
+		});
+    </script>
     {% if showmodel %}
       <script>
         $(document).ready(function(){
