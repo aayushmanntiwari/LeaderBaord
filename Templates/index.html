@@ -62,6 +62,19 @@
     <script src="{% static 'js/custom.js'%} "></script>
     <script src="{% static 'js/customdropdown.js'%} "></script>
     <script src="{% static 'js/url.js'%} "></script>
+    <script>
+	    $(document).ready(function () {
+		   $("input[type=checkbox]").change(function () {
+		      var maxAllowed = 3;
+		      var cnt = $("input[type=checkbox]:checked").length;
+		      if (cnt > maxAllowed) 
+		      {
+			 $(this).prop("checked", "");
+			 alert('Select maximum ' + maxAllowed + ' Levels!');
+		     }
+		  });
+		});
+    </script>
     {% if showmodel %}
       <script>
         $(document).ready(function(){
