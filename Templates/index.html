@@ -62,6 +62,17 @@
     <script src="{% static 'js/custom.js'%} "></script>
     <script src="{% static 'js/customdropdown.js'%} "></script>
     <script src="{% static 'js/url.js'%} "></script>
+    <script>
+	    $("input[type=checkbox]").change(function(){
+		    var max= 3;
+		    if( $("input[type=checkbox]:checked").length == max ){
+			$("input[type=checkbox]").attr('disabled', 'disabled');
+			$("input[type=checkbox]:checked").removeAttr('disabled');
+		    }else{
+			 $("input[type=checkbox]").removeAttr('disabled');
+		    }
+		});
+    </script>
     {% if showmodel %}
       <script>
         $(document).ready(function(){
