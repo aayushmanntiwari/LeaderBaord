@@ -40,6 +40,12 @@ $(document).ready(function(){
       $("#view-rows").text(rowsel.join(","))
       $("#view-form").text($(form).serialize())
       $('input[name="pk\[\]"]',form).remove()
+      $('input[type=checkbox]').on('change', function (e) {
+				    if ($('input[type=checkbox]:checked').length > 2) {
+					$(this).prop('checked', false);
+					alert("allowed only 2");
+				    }
+	  });
       /*e.preventDefault()*/
     });
 });
