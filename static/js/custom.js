@@ -43,7 +43,7 @@ $(document).ready(function(){
           $('input[name="pk\[\]"]',form).remove()
       }
       else {
-        alert("Cant't be more than 2");  
+        alert("Selected value cant't be more than 2 !");  
       }
       /*e.preventDefault()*/
     });
