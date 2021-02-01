@@ -32,14 +32,19 @@ $(document).ready(function(){
     $('#myform').on('submit',function(e){
       var form = this 
       var rowsel = mytable.column(0).checkboxes.selected();
-      $.each(rowsel,function(index,rowId){
-        $(form).append(
-          $('<input>').attr('type','hidden').attr('name','pk').val(rowId)
-        )
-      });
-      $("#view-rows").text(rowsel.join(","))
-      $("#view-form").text($(form).serialize())
-      $('input[name="pk\[\]"]',form).remove()
+      if (rowsel == 2) {
+          $.each(rowsel,function(index,rowId){
+            $(form).append(
+              $('<input>').attr('type','hidden').attr('name','pk').val(rowId)
+            )
+          });
+          $("#view-rows").text(rowsel.join(","))
+          $("#view-form").text($(form).serialize())
+          $('input[name="pk\[\]"]',form).remove()
+      }
+      else {
+        alert("Cant't be more than 2");  
+      }
       /*e.preventDefault()*/
     });
 });
