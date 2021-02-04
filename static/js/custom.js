@@ -32,7 +32,7 @@ $(document).ready(function(){
     $('#myform').on('submit',function(e){
       var form = this 
       var rowsel = mytable.column(0).checkboxes.selected();
-      if (rowsel == 2) {
+      if ( rowsel.length == 2) {
           $.each(rowsel,function(index,rowId){
             $(form).append(
               $('<input>').attr('type','hidden').attr('name','pk').val(rowId)
