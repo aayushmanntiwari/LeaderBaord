@@ -18,7 +18,7 @@ def home(request):
 
 
 def Teams_asJson(request):
-    object_list = Teams.objects.all()..order_by('-score').reverse() #or any kind of queryset
+    object_list = Teams.objects.all().order_by('-score').reverse() #or any kind of queryset
     json = serializers.serialize('json', object_list)
     #print(True)
     return HttpResponse(json, content_type='application/json')      
