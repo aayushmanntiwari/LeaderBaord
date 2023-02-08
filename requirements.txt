@@ -9,7 +9,7 @@ gunicorn
 isort
 lazy-object-proxy
 mccabe
-psycopg2
+psycopg2-binary
 pylint
 pytz
 six
