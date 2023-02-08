@@ -29,7 +29,7 @@ SECRET_KEY = '8n(&&pzzy9gijgr421_pf_1rw4givniqx7c8yd&*ax$r4vszqq'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    ""
+    "leaderboard-twzs.onrender.com"
 ]
 
 
