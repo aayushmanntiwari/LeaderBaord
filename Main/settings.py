@@ -13,6 +13,7 @@ import os
 import django_heroku
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,18 +83,12 @@ WSGI_APPLICATION = 'Main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Leaderboard',
-        'USER':'postgres',
-        'PASSWORD':'',
-        'HOST':'localhost'
-    } ,
+    "default":dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 #this is for heroku deployment
-import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
